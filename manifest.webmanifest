@@ -1,0 +1,10 @@
+{
+  "name": "ProjektPilot – BCSM 205",
+  "short_name": "ProjektPilot",
+  "description": "46 interaktive Klausurfragen zu BCSM 205",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f1e8",
+  "theme_color": "#153b33",
+  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
