@@ -1,4 +1,4 @@
-const CACHE = "projektpilot-bcsm205-v2";
+const CACHE = "projektpilot-bcsm205-v3";
 const ASSETS = ["./", "./index.html", "./styles.css", "./data.js", "./app.js", "./favicon.svg", "./manifest.webmanifest"];
 
 self.addEventListener("install", event => {

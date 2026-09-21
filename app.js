@@ -204,10 +204,11 @@
           <div class="photo-card__meta"><span>Foto-Frage ${escapeHtml(item.photo)}</span><small>${escapeHtml(item.related)}</small></div>
           <h3>${escapeHtml(item.topic)}</h3>
           <p>${escapeHtml(item.question)}</p>
+          ${item.options?.length ? `<div class="photo-options-label">Gedruckte Antwortmöglichkeiten</div><ol class="photo-options">${item.options.map(option => `<li>${escapeHtml(option)}</li>`).join("")}</ol>` : ""}
           <div class="photo-answer"><strong>Richtige Antwort</strong><span>${escapeHtml(item.answer)}</span></div>
         </article>`).join("")}
       </section>
-      <div class="info-strip"><span class="info-icon">!</span><div><strong>Wichtig beim Teilen</strong><p>Die App ist ein fachlich geprüfter Lernkatalog. Sie ist keine wortgetreue Abschrift einer bestätigten zukünftigen Klausur. Handschriftliche Markierungen auf den Fotos wurden nicht als Lösungsschlüssel übernommen.</p></div></div>
+      <div class="info-strip"><span class="info-icon">!</span><div><strong>Wichtig beim Teilen</strong><p>Die App ist ein fachlich geprüfter Lernkatalog. Sie ist keine wortgetreue Abschrift einer bestätigten zukünftigen Klausur. Handschriftliche Kreuze und Randnotizen wurden vollständig ignoriert; die richtigen Antworten stammen aus dem SS26-Skript.</p></div></div>
     `;
   }
 

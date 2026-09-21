@@ -153,6 +153,10 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 .photo-card__meta small { color: var(--blue); font-weight: 750; }
 .photo-card h3 { margin: 12px 0 6px; font: 700 21px/1.15 Georgia, serif; }
 .photo-card > p { margin: 0; color: var(--muted); font-size: 13px; }
+.photo-options-label { margin-top: 15px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.photo-options { display: grid; gap: 6px; margin: 7px 0 0; padding: 0; list-style: none; counter-reset: photo-choice; }
+.photo-options li { position: relative; min-height: 34px; padding: 8px 10px 8px 35px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); font-size: 12px; counter-increment: photo-choice; }
+.photo-options li::before { position: absolute; left: 9px; top: 7px; display: grid; place-items: center; width: 19px; height: 19px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--muted); content: counter(photo-choice, upper-alpha); font-size: 9px; font-weight: 900; }
 .photo-answer { display: grid; gap: 3px; margin-top: 15px; padding: 13px; border-radius: 13px; background: var(--mint); }
 .photo-answer strong { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
 .photo-answer span { font-size: 13px; }
