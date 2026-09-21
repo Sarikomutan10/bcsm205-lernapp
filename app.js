@@ -12,6 +12,9 @@
     order: "Reihenfolge"
   };
   const AUTO_TYPES = new Set(["single", "multiple", "matching", "network", "histogram", "order"]);
+  const TOTAL_QUESTIONS = BCSM205_DATA.questions.length;
+  const ORIGINAL_QUESTIONS = 46;
+  const PHOTO_ONLY_QUESTIONS = TOTAL_QUESTIONS - ORIGINAL_QUESTIONS;
 
   const view = document.querySelector("#view");
   const title = document.querySelector("#page-title");
@@ -71,6 +74,10 @@
 
   function categoryFor(id) {
     return BCSM205_DATA.categories.find(c => c.id === id);
+  }
+
+  function auditPhotoForQuestion(id) {
+    return BCSM205_DATA.photoAudit.matches.find(item => item.question === Number(id))?.photo || null;
   }
 
   function recordResult(q, correct, mode = "auto") {
@@ -137,14 +144,14 @@
     interaction = null;
     setHeader("DEIN LERNCOCKPIT", "Bereit für die nächste Frage?");
     const stats = progressStats();
-    const percent = Math.round(stats.mastered / 46 * 100);
+    const percent = Math.round(stats.mastered / TOTAL_QUESTIONS * 100);
     const next = BCSM205_DATA.questions.find(q => !state.progress[q.id] || state.progress[q.id].status === "wrong") || BCSM205_DATA.questions[0];
     view.innerHTML = `
       <section class="hero-panel">
         <div class="hero-copy">
           <p class="hero-kicker">BCSM 205 · METHODEN DER PROJEKTDURCHFÜHRUNG</p>
-          <h2>46 Fragentypen. Klar üben. Sicher antworten.</h2>
-          <p>Die angekündigten Fragentypen aus der Mitschrift – mit direkter Auswertung, Musterlösungen, Skriptseiten und einem getrennten Abgleich der älteren Klausurfotos.</p>
+          <h2>${TOTAL_QUESTIONS} Fragen aus beiden Quellen. Gemeinsam lernen.</h2>
+          <p>Alle ${ORIGINAL_QUESTIONS} Klausurfragen und ${PHOTO_ONLY_QUESTIONS} zusätzliche, eigenständige Bildfragen – mit direkter Auswertung, Musterlösungen und Skriptseiten.</p>
           <div class="hero-actions">
             <button class="button primary" data-action="start-question" data-id="${next.id}">Mit Frage ${next.id} weiter</button>
             <button class="button secondary" data-route="exam">Prüfungsrunde starten</button>
@@ -153,14 +160,14 @@
         </div>
         <div class="hero-progress">
           <div class="progress-ring" style="--p:${percent}" aria-label="${percent} Prozent gemeistert">
-            <div><strong>${percent}%</strong><span>${stats.mastered} von 46 gemeistert</span></div>
+            <div><strong>${percent}%</strong><span>${stats.mastered} von ${TOTAL_QUESTIONS} gemeistert</span></div>
           </div>
         </div>
       </section>
 
       <section class="stats-grid" aria-label="Lernstatistik">
         <div class="stat-card"><span class="stat-label">Bis zur Klausur</span><span class="stat-value">${daysUntilExam()}</span><span class="stat-sub">Tage bis 26.09.</span></div>
-        <div class="stat-card"><span class="stat-label">Bearbeitet</span><span class="stat-value">${stats.done}</span><span class="stat-sub">von 46 Fragen</span></div>
+        <div class="stat-card"><span class="stat-label">Bearbeitet</span><span class="stat-value">${stats.done}</span><span class="stat-sub">von ${TOTAL_QUESTIONS} Fragen</span></div>
         <div class="stat-card"><span class="stat-label">Trefferquote</span><span class="stat-value good">${stats.accuracy}%</span><span class="stat-sub">über alle Versuche</span></div>
         <div class="stat-card"><span class="stat-label">Offene Fehler</span><span class="stat-value ${stats.wrong ? "bad" : "good"}">${stats.wrong}</span><span class="stat-sub">gezielt wiederholen</span></div>
       </section>
@@ -186,19 +193,21 @@
     session = null;
     interaction = null;
     const audit = BCSM205_DATA.photoAudit;
-    setHeader("ALTKAUSUR-FOTOS", "Was zeigen die 17 Fotos wirklich?");
+    setHeader("ALTKAUSUR-FOTOS", "Was zeigen die 18 Fotos wirklich?");
     view.innerHTML = `
       <section class="audit-intro">
         <span class="audit-badge">Geprüft am ${escapeHtml(audit.checked)}</span>
-        <h2>Die Fotos und der 46er-Katalog sind zwei verschiedene Quellen.</h2>
+        <h2>Beide Quellen stecken jetzt in einem gemeinsamen Katalog.</h2>
         <p>${escapeHtml(audit.summary)}</p>
         <div class="audit-facts">
-          <div><strong>46</strong><span>angekündigte Hauptfragentypen</span></div>
-          <div><strong>17</strong><span>überlappende Altklausurfotos</span></div>
-          <div><strong>${audit.variants.length}</strong><span>klar lesbare Zusatzvarianten</span></div>
+          <div><strong>${ORIGINAL_QUESTIONS}</strong><span>Klausurfragen vollständig erhalten</span></div>
+          <div><strong>${PHOTO_ONLY_QUESTIONS}</strong><span>eigenständige Bildfragen ergänzt</span></div>
+          <div><strong>${TOTAL_QUESTIONS}</strong><span>Fragen im gemeinsamen Katalog</span></div>
         </div>
       </section>
-      <div class="section-heading"><div><h2>Zusätzlich aus den Fotos lernen</h2><p>Die Fotofragennummer steht links; „Hauptfrage“ verweist auf das passende Thema im Lernkatalog.</p></div></div>
+      <div class="section-heading"><div><h2>Gleiche Fragen richtig zugeordnet</h2><p>Diese Bildfragen sind bereits durch eine vorhandene Klausurfrage abgedeckt und werden deshalb nicht doppelt gezählt.</p></div></div>
+      <div class="audit-match-list">${audit.matches.map(item => `<span class="pill source">Bild F${item.photo} = Frage ${item.question}</span>`).join("")}</div>
+      <div class="section-heading"><div><h2>Beispiele aus dem Foto-Abgleich</h2><p>Die 20 eigenständigen Bildfragen findest du vollständig als Fragen 47 bis 66 im Lernkatalog.</p></div></div>
       <section class="photo-grid">
         ${audit.variants.map(item => `<article class="photo-card">
           <div class="photo-card__meta"><span>Foto-Frage ${escapeHtml(item.photo)}</span><small>${escapeHtml(item.related)}</small></div>
@@ -278,7 +287,7 @@
   function renderQuestionSession() {
     const q = getQuestion(session.ids[session.index]);
     const modeName = session.mode === "exam" ? "PRÜFUNGSMODUS" : session.mode === "mistakes" ? "FEHLERTRAINING" : "LERNMODUS";
-    setHeader(modeName, session.mode === "exam" ? "Konzentriert bleiben." : `Frage ${q.id} von 46`);
+    setHeader(modeName, session.mode === "exam" ? "Konzentriert bleiben." : `Frage ${q.id} von ${TOTAL_QUESTIONS}`);
     const percent = Math.round((session.index + (interaction?.checked ? 1 : 0)) / session.ids.length * 100);
     view.innerHTML = `
       <div class="session-bar">
@@ -295,6 +304,7 @@
           <span class="pill">${TYPE_LABELS[q.type]}</span>
           <span class="pill">${q.points} ${q.points === 1 ? "Punkt" : "Punkte"}</span>
           <span class="pill source">${escapeHtml(q.source)}</span>
+          ${q.id <= ORIGINAL_QUESTIONS && auditPhotoForQuestion(q.id) ? `<span class="pill source">auch Bild F${auditPhotoForQuestion(q.id)}</span>` : ""}
         </div>
         <h2>${escapeHtml(q.prompt)}</h2>
         ${q.instruction ? `<p class="question-instruction">${escapeHtml(q.instruction)}</p>` : ""}
@@ -506,7 +516,7 @@
   function renderCatalog() {
     session = null;
     interaction = null;
-    setHeader("FRAGENÜBERSICHT", "Alle 46 Fragen auf einen Blick.");
+    setHeader("FRAGENÜBERSICHT", `Alle ${TOTAL_QUESTIONS} Fragen auf einen Blick.`);
     const filtered = BCSM205_DATA.questions.filter(q => {
       const categoryMatch = catalogFilter.category === "all" || q.category === catalogFilter.category;
       const haystack = `${q.id} ${q.prompt} ${q.source}`.toLowerCase();
@@ -626,19 +636,19 @@
       description:"Gibt den aktuellen BCSM-205-Lernfortschritt mit gemeisterten und offenen Fragen zurück.",
       inputSchema:{type:"object",properties:{},additionalProperties:false},
       annotations:{readOnlyHint:true,untrustedContentHint:false},
-      execute:()=>({total:46,...progressStats(),wrongQuestionIds:BCSM205_DATA.questions.filter(q=>state.progress[q.id]?.status==="wrong").map(q=>q.id)})
+      execute:()=>({total:TOTAL_QUESTIONS,...progressStats(),wrongQuestionIds:BCSM205_DATA.questions.filter(q=>state.progress[q.id]?.status==="wrong").map(q=>q.id)})
     });
     register({
       name:"open_learning_question", title:"Lernfrage öffnen",
-      description:"Öffnet eine bestimmte Frage von 1 bis 46 sichtbar im Lernmodus.",
-      inputSchema:{type:"object",properties:{questionId:{type:"integer",minimum:1,maximum:46}},required:["questionId"],additionalProperties:false},
+      description:`Öffnet eine bestimmte Frage von 1 bis ${TOTAL_QUESTIONS} sichtbar im Lernmodus.`,
+      inputSchema:{type:"object",properties:{questionId:{type:"integer",minimum:1,maximum:TOTAL_QUESTIONS}},required:["questionId"],additionalProperties:false},
       annotations:{readOnlyHint:true,untrustedContentHint:false},
       execute:({questionId})=>{ if(!getQuestion(questionId)) throw new Error("Unbekannte Frage"); openSpecificQuestion(questionId); return {opened:true,questionId}; }
     });
     register({
       name:"submit_choice_answer", title:"Auswahlantwort abgeben",
       description:"Öffnet eine Single- oder Multiple-Choice-Frage, wählt Antwortnummern aus und wertet sie sichtbar aus.",
-      inputSchema:{type:"object",properties:{questionId:{type:"integer",minimum:1,maximum:46},selectedOptions:{type:"array",items:{type:"integer",minimum:1},minItems:1,uniqueItems:true}},required:["questionId","selectedOptions"],additionalProperties:false},
+      inputSchema:{type:"object",properties:{questionId:{type:"integer",minimum:1,maximum:TOTAL_QUESTIONS},selectedOptions:{type:"array",items:{type:"integer",minimum:1},minItems:1,uniqueItems:true}},required:["questionId","selectedOptions"],additionalProperties:false},
       annotations:{readOnlyHint:false,untrustedContentHint:false},
       execute:({questionId,selectedOptions})=>{
         const q=getQuestion(questionId);

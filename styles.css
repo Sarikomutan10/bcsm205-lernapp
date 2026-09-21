@@ -147,6 +147,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 .audit-facts strong, .audit-facts span { display: block; }
 .audit-facts strong { font: 700 28px/1 Georgia, serif; }
 .audit-facts span { margin-top: 6px; color: var(--muted); font-size: 11px; }
+.audit-match-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .photo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
 .photo-card { padding: 20px; border: 1px solid var(--line); border-radius: 19px; background: var(--surface); }
 .photo-card__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--orange); font-size: 11px; font-weight: 800; }

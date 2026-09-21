@@ -1,11 +1,12 @@
 # ProjektPilot · BCSM 205
 
-Interaktive Lernapp für die 46 Klausurfragen im Modul **Methoden der Projektdurchführung** (SoSe 2026).
+Interaktive Lernapp für 66 Klausur- und Bildfragen im Modul **Methoden der Projektdurchführung** (SoSe 2026).
 
 ## Enthalten
 
-- 46 angekündigte Fragentypen aus der aktuellen Mitschrift
-- separater Abgleich mit 17 überlappenden Fotos einer älteren Klausurvariante
+- alle 46 Klausurfragen aus der aktuellen Mitschrift
+- 20 zusätzliche, eigenständige Fragen aus 18 Fotos einer älteren Klausurvariante
+- 23 inhaltlich gleiche Bildfragen sind den vorhandenen Klausurfragen zugeordnet und werden nicht doppelt gezählt
 - anklickbare Single- und Multiple-Choice-Aufgaben
 - interaktive Zuordnungen, Reihenfolge- und Rechenaufgaben
 - Musterlösungen und Skriptseiten zu jeder Frage
@@ -15,4 +16,4 @@ Interaktive Lernapp für die 46 Klausurfragen im Modul **Methoden der Projektdur
 
 Die App funktioniert als statische Website und kann direkt über GitHub Pages bereitgestellt werden.
 
-Die 46 Hauptfragen sind ein skriptbasierter Lernkatalog und keine wortgetreue Abschrift einer bestätigten zukünftigen Klausur. Abweichende, klar lesbare Fotoaufgaben sind im Bereich **Foto-Abgleich** ausgewiesen.
+Der Katalog kombiniert beide Quellen. Die Bildfragen 47 bis 66 übernehmen die lesbaren gedruckten Fragen und Antwortmöglichkeiten; handschriftliche Kreuze wurden ignoriert. Bildfrage 1 ist unlesbar. Bei Bildfrage 19 ist der Foto-Wortlaut teilweise unscharf, daher ist sie ausdrücklich als skriptbasierte offene Übungsfrage gekennzeichnet.

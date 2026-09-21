@@ -5,11 +5,21 @@ const BCSM205_DATA = {
     durationMinutes: 120,
     officialPoints: 120,
     passPoints: 61,
-    note: "Die 46 Hauptfragen bilden die angekündigten Fragentypen aus der Mitschrift ab. Die 17 Fotos zeigen eine ältere, teilweise überlappende Klausurvariante; deshalb können Nummern und Formulierungen abweichen. Der Übungskatalog enthält 122 Trainingspunkte, die offizielle Klausur 120 Punkte."
+    note: "Der gemeinsame Katalog enthält alle 46 Klausurfragen sowie 20 zusätzliche, eigenständige Fragen aus 18 Fotos einer älteren Klausur. 23 weitere Bildfragen sind bereits inhaltlich durch die Klausurfragen abgedeckt und werden deshalb nicht doppelt gezählt. Bildfrage 1 ist unlesbar; Bildfrage 19 wird als teilweise unscharf gekennzeichnet. Die offizielle Klausur umfasst 120 Punkte."
   },
   photoAudit: {
     checked: "21.09.2026",
-    summary: "Alle 17 Originalfotos wurden in voller Auflösung geprüft. Für diesen Abgleich zählen ausschließlich der gedruckte Fragetext, die gedruckten Antwortmöglichkeiten, Aufgabentyp und Punkte. Handschriftliche Kreuze und Randnotizen wurden vollständig ignoriert. Die richtige Lösung wird separat aus dem SS26-Skript hergeleitet.",
+    summary: "Alle 18 Originalfotos wurden in voller Auflösung geprüft. Für diesen Abgleich zählen ausschließlich der gedruckte Fragetext, die gedruckten Antwortmöglichkeiten, Aufgabentyp und Punkte. Handschriftliche Kreuze und Randnotizen wurden vollständig ignoriert. 20 eigenständige Bildfragen sind als Fragen 47 bis 66 in den Hauptkatalog aufgenommen; 23 inhaltlich gleiche Bildfragen wurden bestehenden Klausurfragen zugeordnet.",
+    matches: [
+      { photo: 3, question: 3 }, { photo: 4, question: 4 }, { photo: 12, question: 12 },
+      { photo: 13, question: 13 }, { photo: 14, question: 14 }, { photo: 15, question: 15 },
+      { photo: 18, question: 18 }, { photo: 20, question: 20 }, { photo: 22, question: 22 },
+      { photo: 23, question: 23 }, { photo: 24, question: 24 }, { photo: 25, question: 25 },
+      { photo: 28, question: 28 }, { photo: 29, question: 29 }, { photo: 33, question: 32 },
+      { photo: 34, question: 33 }, { photo: 36, question: 35 }, { photo: 37, question: 36 },
+      { photo: 39, question: 39 }, { photo: 40, question: 40 }, { photo: 41, question: 41 },
+      { photo: 42, question: 42 }, { photo: 44, question: 44 }
+    ],
     variants: [
       {
         photo: "2",
@@ -17,7 +27,7 @@ const BCSM205_DATA = {
         question: "In welcher Projektmanagementphase wird das PM-Element Arbeit detailliert bearbeitet?",
         options: ["ProjektPLANUNG", "ProjektABSCHLUSS", "ProjektDURCHFÜHRUNG", "ProjektINITIIERUNG"],
         answer: "In der Planung. In der Initiierung werden die PM-Elemente nur grob geplant.",
-        related: "Hauptfragen 6 und 8"
+        related: "Jetzt Lernfrage 47"
       },
       {
         photo: "3",
@@ -25,7 +35,7 @@ const BCSM205_DATA = {
         question: "Welche Begriffe sind Projektmanagementelemente: Initiierung, sachliches Umfeld, Zeit, Durchführung, Kosten/Ressourcen?",
         options: ["Initiierung", "Sachliches Umfeld", "Zeit", "Durchführung", "Kosten/Ressourcen"],
         answer: "Sachliches Umfeld, Zeit und Kosten/Ressourcen. Initiierung und Durchführung sind Projektmanagementphasen.",
-        related: "Hauptfragen 3 und 6"
+        related: "Inhaltlich gleich mit Frage 3"
       },
       {
         photo: "16",
@@ -33,7 +43,7 @@ const BCSM205_DATA = {
         question: "Welche Methoden eignen sich nicht zur Messung des Fortschrittsgrads eines Arbeitspakets?",
         options: ["Erwartungswert-(EW)-Methode", "Schätzmethode", "Vorwärtsterminierungsmethode", "Zeitproportionalitätsmethode", "0/50/100%-Methode"],
         answer: "Erwartungswertmethode und Vorwärtsterminierungsmethode. Schätz-, Zeitproportionalitäts- und 0/50/100%-Methode sind Fortschrittsmessmethoden.",
-        related: "Zusatz zu Hauptfrage 16"
+        related: "Jetzt Lernfrage 55"
       },
       {
         photo: "17",
@@ -41,7 +51,7 @@ const BCSM205_DATA = {
         question: "In welchen Kategorien wird eine organisatorische Rolle beschrieben?",
         options: ["Verantwortung", "Aufwand", "Aufgaben", "Kompetenzen", "Verfügbarkeit"],
         answer: "Aufgaben, Kompetenzen und Verantwortung.",
-        related: "Zusatz zu Hauptfrage 17"
+        related: "Jetzt Lernfrage 56"
       },
       {
         photo: "30",
@@ -49,7 +59,7 @@ const BCSM205_DATA = {
         question: "Welche Strategien, auf identifizierte Risiken zu reagieren, wurden behandelt?",
         options: ["Vermindern", "Akzeptieren", "Übertragen", "Eskalieren", "Vermeiden"],
         answer: "Vermeiden, vermindern, übertragen und akzeptieren. Eskalieren ist hier keine der vier Risikostrategien.",
-        related: "Hauptfrage 32"
+        related: "Jetzt Lernfrage 61"
       },
       {
         photo: "31",
@@ -57,7 +67,7 @@ const BCSM205_DATA = {
         question: "Ein Zulieferer liefert häufig verspätet. Sie entschließen sich, nichts zu unternehmen. Welche Risikostrategie haben Sie gewählt?",
         options: ["Vermindern", "Akzeptieren", "Übertragen", "Eskalieren", "Vermeiden"],
         answer: "Akzeptieren: Das Risiko wird bewusst getragen.",
-        related: "Hauptfrage 32"
+        related: "Jetzt Lernfrage 62"
       },
       {
         photo: "32",
@@ -65,7 +75,7 @@ const BCSM205_DATA = {
         question: "Ein Risiko hat eine Auswirkung von 5.000 € und eine Eintrittswahrscheinlichkeit von 20 %. Wie hoch ist der Erwartungswert?",
         options: ["5.000 €", "1.000 €", "20 %", "1 %"],
         answer: "1.000 €: 5.000 € × 0,20.",
-        related: "Hauptfragen 30–32"
+        related: "Jetzt Lernfrage 63"
       },
       {
         photo: "34",
@@ -73,7 +83,7 @@ const BCSM205_DATA = {
         question: "Welche Vertragsform findet man im Projektgeschäft regelmäßig, weil sie die erfolgreiche Herstellung eines Lieferobjekts und explizite Abnahmekriterien vereinbart?",
         options: ["Dienstvertrag", "Werkvertrag", "Kaufvertrag"],
         answer: "Werkvertrag.",
-        related: "Hauptfrage 33"
+        related: "Inhaltlich gleich mit Frage 33"
       },
       {
         photo: "35",
@@ -81,7 +91,7 @@ const BCSM205_DATA = {
         question: "Wie sind Cost Performance Indicator (CPI) und Schedule Performance Indicator (SPI) beim Earned Value Management definiert?",
         options: ["CPI = AC/EV; SPI = PV/EV", "CPI = EV/PV; SPI = EV/AC", "CPI = EV/AC; SPI = EV/PV"],
         answer: "CPI = EV/AC und SPI = EV/PV.",
-        related: "Hauptfrage 34"
+        related: "Jetzt Lernfrage 64"
       },
       {
         photo: "36",
@@ -89,7 +99,7 @@ const BCSM205_DATA = {
         question: "Ein Projekt besitzt SPI = 0,8 und CPI = 1,1. Was bedeutet das?",
         options: ["Die Kosten sind zum Stichtag niedriger als geplant", "Das Projekt ist seinem Zeitplan voraus", "Die Kosten sind zum Stichtag höher als geplant", "Das Projekt ist zum Stichtag hinter seinem Zeitplan"],
         answer: "Die Kosten sind niedriger als geplant, und das Projekt liegt zeitlich hinter dem Plan.",
-        related: "Hauptfrage 35"
+        related: "Inhaltlich gleich mit Frage 35"
       },
       {
         photo: "38",
@@ -97,7 +107,7 @@ const BCSM205_DATA = {
         question: "Wie häufig wird der Regelkreis typischerweise durchlaufen?",
         options: ["Täglich", "Alle 3–5 Arbeitstage", "Alle 2–4 Wochen", "Quartalsweise"],
         answer: "Im Mittel alle 2–4 Wochen, abhängig von Projektgröße und Komplexität.",
-        related: "Hauptfrage 36"
+        related: "Jetzt Lernfrage 65"
       },
       {
         photo: "40",
@@ -105,7 +115,7 @@ const BCSM205_DATA = {
         question: "Wer nimmt das Projektlieferobjekt ab?",
         options: ["Projektauftraggeber/in beziehungsweise Kunde/in", "Projektleiter/in", "Projektmanagementteam"],
         answer: "Der Projektauftraggeber beziehungsweise der Kunde anhand der dokumentierten Abnahmekriterien.",
-        related: "Hauptfragen 39 und 40"
+        related: "Inhaltlich gleich mit Frage 40"
       },
       {
         photo: "43",
@@ -113,7 +123,7 @@ const BCSM205_DATA = {
         question: "Was ist das Product Backlog bei Scrum?",
         options: ["Eine Scrum-Rolle", "Ein Scrum-Artefakt", "Ein Scrum-Ereignis"],
         answer: "Ein Scrum-Artefakt: die priorisierte Gesamtliste der Anforderungen, User Stories, Verbesserungen und Fehlerbehebungen.",
-        related: "Hauptfrage 43 behandelt stattdessen Scrum-Ereignisse"
+        related: "Jetzt Lernfrage 66"
       }
     ]
   },
@@ -124,7 +134,8 @@ const BCSM205_DATA = {
     { id: "planung", range: "20–26", title: "Zeit, Ressourcen & Kosten", subtitle: "Dauer, Netzplan, Histogramm, Schätzung" },
     { id: "umfeld", range: "27–33", title: "Umfeld & Risiken", subtitle: "Stakeholder, Reserven, Verträge" },
     { id: "controlling", range: "34–38", title: "Controlling", subtitle: "EVM, Regelkreis, Steuerung, Ampel" },
-    { id: "abschluss", range: "39–46", title: "Abschluss & Agilität", subtitle: "Abnahme, Scrum, User Story, Selbstmanagement" }
+    { id: "abschluss", range: "39–46", title: "Abschluss & Agilität", subtitle: "Abnahme, Scrum, User Story, Selbstmanagement" },
+    { id: "altklausur", range: "47–66", title: "Zusätzliche Bildfragen", subtitle: "Eigenständige Aufgaben aus der älteren Fotoklausur" }
   ],
   questions: [
     {
@@ -573,6 +584,136 @@ const BCSM205_DATA = {
         ["Vertrags- und Claimmanagement",false]
       ],
       explanation: "Die ersten vier gehören dazu. Das Skript zeigt zusätzlich Gesundheits- und Stressmanagement als fünften echten Teilbereich."
+    },
+    {
+      id: 47, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F2 · Folien 47–49",
+      prompt: "In welcher Projektmanagementphase wird das PM-Element Arbeit detailliert bearbeitet?",
+      options: [["ProjektPLANUNG",true],["ProjektABSCHLUSS",false],["ProjektDURCHFÜHRUNG",false],["ProjektINITIIERUNG",false]],
+      explanation: "In der Initiierung werden die PM-Elemente nur grob betrachtet. Ihre detaillierte Ausarbeitung erfolgt in der Projektplanung."
+    },
+    {
+      id: 48, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F5 · Folien 62–64",
+      prompt: "Welchem Projektmanagementelement ist die erforderliche Gaststättenkonzession für eine Pizzeria zuzuordnen?",
+      options: [["Arbeit",false],["Sachliches Umfeld",true],["Risiken und Chancen",false],["Vertragsmanagement",false]],
+      explanation: "Die Konzession ist eine rechtliche Rahmenbedingung und damit Teil des sachlichen Umfelds. Erst eine Unsicherheit über ihre Erteilung kann zusätzlich ein Risiko darstellen."
+    },
+    {
+      id: 49, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F6 · Folien 41–43",
+      prompt: "Welche Begriffe bezeichnen Projektmanagementphasen?",
+      instruction: "Wähle genau zwei Begriffe.",
+      options: [["ProjektEINGRENZUNG",false],["ProjektPLANUNG",true],["ProjektBERECHNUNG",false],["ProjektDURCHFÜHRUNG",true],["ProjektDOKUMENTATION",false]],
+      explanation: "Projektplanung und Projektdurchführung sind Phasen des im Kurs verwendeten Phasenmodells. Die übrigen Begriffe sind dort keine eigenständigen Projektmanagementphasen."
+    },
+    {
+      id: 50, category: "altklausur", type: "open", points: 6, source: "Altklausurfoto F7 · Folien 31–34",
+      prompt: "Erläutere das magische Dreieck des Projektmanagements am Beispiel eines Pizzeria-Projekts.",
+      criteria: ["Leistung beziehungsweise Lieferobjekt erläutert", "Zeit beziehungsweise Termin erläutert", "Kosten beziehungsweise Ressourcen erläutert", "Qualität als verbindende Zielgröße berücksichtigt", "Wechselwirkungen zwischen den Zielgrößen erklärt", "Konkretes Pizzeria-Beispiel verwendet"],
+      explanation: "Beim Pizzeria-Projekt könnte die Leistung eine funktionsfähige Bestell-App mit festgelegtem Umfang sein, der Termin die Eröffnung und das Budget die verfügbaren Kosten und Ressourcen. Werden zusätzliche Funktionen verlangt, steigen meist Zeit oder Kosten. Soll die App früher fertig sein, werden mehr Ressourcen benötigt oder der Umfang muss sinken. Die gewünschte Qualität begrenzt dabei, wie stark gekürzt werden kann."
+    },
+    {
+      id: 51, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F8 · Folien 45–53",
+      prompt: "Welchem Zweck dient die Projektinitiierung?",
+      instruction: "Wähle genau drei Aussagen.",
+      options: [["Prüfung der sachlichen Machbarkeit",true],["Detaillierte Planung aller Projektmanagementelemente",false],["Prüfung der technischen Machbarkeit",true],["Bewertung der Projektwürdigkeit",true]],
+      explanation: "Die Initiierung klärt Machbarkeit und Projektwürdigkeit und schafft die Grundlage für die Entscheidung über das Projekt. Die detaillierte Planung folgt erst in der Planungsphase."
+    },
+    {
+      id: 52, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F9 · Folie 55",
+      prompt: "Welche Instanzen können Projekte auslösen?",
+      instruction: "Wähle genau drei Antworten.",
+      options: [["Anwohner",false],["Externe Kunden",true],["Mitarbeiter",true],["Lieferanten",false],["Unternehmensleitung",true]],
+      explanation: "Nach dem Skript können externe Kunden, Mitarbeiter und die Unternehmensleitung Projekte anstoßen. Anwohner und Lieferanten gehören in dieser Aufzählung nicht zu den typischen auslösenden Instanzen."
+    },
+    {
+      id: 53, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F10 · Folien 52–53",
+      prompt: "Welche Größen werden zur Beurteilung der wirtschaftlichen Projektwürdigkeit miteinander verglichen?",
+      options: [["Kosten und Nutzen",true],["Budget und Nutzen",false],["Budget und Projektdauer",false]],
+      explanation: "Die wirtschaftliche Projektwürdigkeit wird durch einen Vergleich des erwarteten Nutzens mit den entstehenden Kosten beurteilt."
+    },
+    {
+      id: 54, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F11 · Folien 56–61",
+      prompt: "Welche Aussagen über Projektziele sind richtig?",
+      instruction: "Wähle genau drei Aussagen.",
+      options: [["Projektziele können hierarchisch geordnet werden.",true],["Projektziele sollen SMART formuliert sein.",true],["Projektziele und Projektlieferobjekt sind immer dasselbe.",false],["Projektziele gehören ausschließlich zum PM-Element Arbeit.",false],["Zu den Zielklassen gehören mindestens Leistung, Zeit, Kosten und Qualität.",true]],
+      explanation: "Projektziele werden hierarchisch strukturiert und SMART formuliert. Leistung, Zeit, Kosten und Qualität bilden zentrale Zielklassen. Das Lieferobjekt ist ein Ergebnis des Projekts, aber nicht mit sämtlichen Projektzielen identisch."
+    },
+    {
+      id: 55, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F16 · Folien 85–86",
+      prompt: "Welche Methoden eignen sich nicht zur Messung des Fertigstellungsgrads eines Arbeitspakets?",
+      instruction: "Wähle genau zwei Antworten.",
+      options: [["Erwartungswert-(EW)-Methode",true],["Schätzmethode",false],["Vorwärtsterminierungsmethode",true],["Zeitproportionalitätsmethode",false],["0/50/100%-Methode",false]],
+      explanation: "Schätzmethode, Zeitproportionalität und 0/50/100-Methode dienen der Fortschrittsmessung. Erwartungswertmethode und Vorwärtsterminierung haben andere Zwecke."
+    },
+    {
+      id: 56, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F17 · Folien 87–96",
+      prompt: "Welche Angaben gehören zur Beschreibung einer Projektrolle?",
+      instruction: "Wähle genau drei Begriffe.",
+      options: [["Verantwortung",true],["Aufgaben",true],["Kompetenzen beziehungsweise Befugnisse",true],["Aufwand",false],["Verfügbarkeit",false]],
+      explanation: "Eine Rolle wird über Aufgaben, Verantwortung und Kompetenzen beziehungsweise Befugnisse beschrieben. Aufwand und Verfügbarkeit betreffen die Ressourcenplanung einer Person."
+    },
+    {
+      id: 57, category: "altklausur", type: "open", points: 2, source: "Altklausurfoto F19 teilweise unscharf · Folien 47–49",
+      prompt: "Welche Planungsinhalte beziehungsweise PM-Elemente müssen in der Projektplanung berücksichtigt werden?",
+      instruction: "Der gedruckte Wortlaut und die Antwortmöglichkeiten von F19 sind im Foto teilweise unscharf. Trainiert wird deshalb die vollständige, skriptbasierte Antwort.",
+      criteria: ["Projektziel und Lieferobjekt", "Arbeit", "Organisation und Kommunikation", "Zeit", "Ressourcen und Kosten", "Risiken und Chancen sowie relevante Umfeld- und Stakeholderaspekte"],
+      explanation: "In der Planung werden die zuvor grob betrachteten PM-Elemente detailliert ausgearbeitet: Ziele und Lieferobjekt, Arbeit, Organisation und Kommunikation, Zeit, Ressourcen und Kosten sowie Risiken und Chancen. Umfeld und Stakeholder liefern dafür wichtige Randbedingungen."
+    },
+    {
+      id: 58, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F21 · Folien 105–111",
+      prompt: "In welchem PM-Element wird die Größe Dauer und in welchem die Größe Aufwand betrachtet?",
+      options: [["Dauer im PM-Element Arbeit; Aufwand im PM-Element Zeit",false],["Dauer beim Leistungsumfang; Aufwand im PM-Element Zeit",false],["Dauer im PM-Element Zeit; Aufwand im PM-Element Arbeit",true]],
+      explanation: "Der Aufwand beschreibt die benötigte Arbeitsmenge und gehört zum Element Arbeit. Die Dauer beschreibt die zeitliche Länge und gehört zum Element Zeit."
+    },
+    {
+      id: 59, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F26 · Folien 62–64",
+      prompt: "Wobei unterstützt die Bearbeitung des PM-Elements sachliches Umfeld unter anderem?",
+      instruction: "Wähle genau zwei Antworten.",
+      options: [["Klärung der Machbarkeit",true],["Ableitung sämtlicher Arbeitspakete",false],["Identifikation von Risiken",true]],
+      explanation: "Rahmenbedingungen des sachlichen Umfelds beeinflussen die Machbarkeit und können Risiken sichtbar machen. Arbeitspakete werden dagegen aus dem zu erbringenden Projektumfang abgeleitet."
+    },
+    {
+      id: 60, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F27 · Folien 62–64 und 154–157",
+      prompt: "Wobei handelt es sich in der Fallstudie Pizzeria nicht um feste Maßgaben des sachlichen Umfelds, sondern um mögliche Risiken?",
+      instruction: "Wähle genau zwei Antworten.",
+      options: [["Vorgeschriebene Zahl von Parkplätzen",false],["Mögliche Beschwerden von Anwohnern wegen Lärm oder Geruch",true],["Erforderliche Gaststättenkonzession",false],["Mögliche Ablehnung der Finanzierung durch die Bank",true]],
+      explanation: "Parkplatzvorgaben und Konzession sind feste Rahmenbedingungen. Beschwerden oder eine abgelehnte Finanzierung sind unsichere zukünftige Ereignisse und damit Risiken."
+    },
+    {
+      id: 61, category: "altklausur", type: "multiple", points: 2, source: "Altklausurfoto F30 · Folien 158–160",
+      prompt: "Welche Strategien sind mögliche Reaktionen auf Projektrisiken?",
+      instruction: "Wähle genau vier Antworten.",
+      options: [["Risiko reduzieren",true],["Risiko akzeptieren",true],["Risiko übertragen",true],["Risiko eskalieren",false],["Risiko vermeiden",true]],
+      explanation: "Die klassischen Reaktionsstrategien sind vermeiden, reduzieren, übertragen und akzeptieren. Eskalation ist ein Entscheidungsweg, aber in dieser Systematik keine eigene Risikobewältigungsstrategie."
+    },
+    {
+      id: 62, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F31 · Folien 158–160",
+      prompt: "Ein Lieferant könnte verspätet liefern. Das Projektteam kennt das Risiko und entscheidet, zunächst nichts zu unternehmen. Welche Risikostrategie ist das?",
+      options: [["Vermeiden",false],["Reduzieren",false],["Übertragen",false],["Akzeptieren",true]],
+      explanation: "Das Team nimmt das Risiko bewusst hin und plant zunächst keine Gegenmaßnahme. Damit wird das Risiko akzeptiert."
+    },
+    {
+      id: 63, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F32 · Folien 161–162",
+      prompt: "Ein Risiko besitzt eine Schadenshöhe von 5.000 Euro und eine Eintrittswahrscheinlichkeit von 20 Prozent. Wie hoch ist der Risikowert?",
+      options: [["5.000 Euro",false],["1.000 Euro",true],["20 Prozent",false],["1 Prozent",false]],
+      explanation: "Risikowert = Schadenshöhe × Eintrittswahrscheinlichkeit = 5.000 Euro × 0,20 = 1.000 Euro."
+    },
+    {
+      id: 64, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F35 · Folien 177–179",
+      prompt: "Welche Formeln für die Leistungskennzahlen des Earned Value Managements sind richtig?",
+      options: [["CPI = EV / AC und SPI = EV / PV",true],["CPI = AC / EV und SPI = PV / EV",false],["CPI = EV − AC und SPI = EV − PV",false]],
+      explanation: "Der Cost Performance Index ist EV geteilt durch AC; der Schedule Performance Index ist EV geteilt durch PV. Differenzen ergeben CV beziehungsweise SV, nicht die Indizes."
+    },
+    {
+      id: 65, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F38 · Folie 169",
+      prompt: "Wie häufig wird der Regelkreis abhängig von Projektgröße und -komplexität im Mittel durchlaufen?",
+      options: [["Täglich",false],["Alle 3 bis 5 Arbeitstage",false],["Alle 2 bis 4 Wochen",true],["Quartalsweise",false]],
+      explanation: "Als mittlere Orientierung nennt die Folie einen Durchlauf alle zwei bis vier Wochen. Die tatsächliche Frequenz hängt von Größe und Komplexität des Projekts ab."
+    },
+    {
+      id: 66, category: "altklausur", type: "single", points: 1, source: "Altklausurfoto F43 · Folien 213–214",
+      prompt: "Was ist das Product Backlog in Scrum?",
+      options: [["Eine Scrum-Rolle",false],["Ein Scrum-Artefakt",true],["Ein Scrum-Ereignis",false]],
+      explanation: "Das Product Backlog ist die priorisierte Gesamtliste der Anforderungen, User Stories, Verbesserungen und Fehlerbehebungen und damit ein Scrum-Artefakt."
     }
   ]
 };
