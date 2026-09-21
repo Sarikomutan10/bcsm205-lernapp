@@ -1,5 +1,5 @@
-const CACHE = "projektpilot-bcsm205-v4";
-const ASSETS = ["./", "./index.html", "./styles.css", "./data.js", "./app.js", "./favicon.svg", "./manifest.webmanifest"];
+const CACHE = "projektpilot-bcsm205-v5";
+const ASSETS = ["./", "./index.html", "./styles.css?v=5", "./data.js?v=5", "./app.js?v=5", "./favicon.svg", "./manifest.webmanifest"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -11,9 +11,9 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
-  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+  event.respondWith(fetch(event.request).then(response => {
     const copy = response.clone();
     caches.open(CACHE).then(cache => cache.put(event.request, copy));
     return response;
-  })));
+  }).catch(() => caches.match(event.request)));
 });
