@@ -5,7 +5,83 @@ const BCSM205_DATA = {
     durationMinutes: 120,
     officialPoints: 120,
     passPoints: 61,
-    note: "Der rekonstruierte Übungskatalog enthält 122 Trainingspunkte. Laut offizieller Skriptfolie hat die echte Klausur 120 Punkte; zum Bestehen werden 61 Punkte benötigt."
+    note: "Die 46 Hauptfragen bilden die angekündigten Fragentypen aus der Mitschrift ab. Die 17 Fotos zeigen eine ältere, teilweise überlappende Klausurvariante; deshalb können Nummern und Formulierungen abweichen. Der Übungskatalog enthält 122 Trainingspunkte, die offizielle Klausur 120 Punkte."
+  },
+  photoAudit: {
+    checked: "21.09.2026",
+    summary: "Alle 17 Originalfotos wurden in voller Auflösung mit der Mitschrift und dem SS26-Skript verglichen. Die handschriftlichen Kreuze auf den Fotos sind keine Musterlösung. Die folgenden klar lesbaren Fotoaufgaben weichen in Nummer oder Form von den 46 Hauptfragen ab und sollten zusätzlich geübt werden.",
+    variants: [
+      {
+        photo: "2",
+        topic: "PM-Phase Arbeit",
+        question: "In welcher Projektmanagementphase wird das PM-Element Arbeit detailliert bearbeitet?",
+        answer: "In der Planung. In der Initiierung werden die PM-Elemente nur grob geplant.",
+        related: "Hauptfragen 6 und 8"
+      },
+      {
+        photo: "3",
+        topic: "PM-Elemente erkennen",
+        question: "Welche Begriffe sind Projektmanagementelemente: Initiierung, sachliches Umfeld, Zeit, Durchführung, Kosten/Ressourcen?",
+        answer: "Sachliches Umfeld, Zeit und Kosten/Ressourcen. Initiierung und Durchführung sind Projektmanagementphasen.",
+        related: "Hauptfragen 3 und 6"
+      },
+      {
+        photo: "16",
+        topic: "Fortschrittsgrad",
+        question: "Welche Methoden eignen sich nicht zur Messung des Fortschrittsgrads eines Arbeitspakets?",
+        answer: "Erwartungswertmethode und Vorwärtsterminierungsmethode. Schätz-, Zeitproportionalitäts- und 0/50/100%-Methode sind Fortschrittsmessmethoden.",
+        related: "Zusatz zu Hauptfrage 16"
+      },
+      {
+        photo: "17",
+        topic: "Rollenbeschreibung",
+        question: "In welchen Kategorien wird eine organisatorische Rolle beschrieben?",
+        answer: "Aufgaben, Kompetenzen und Verantwortung.",
+        related: "Zusatz zu Hauptfrage 17"
+      },
+      {
+        photo: "30–31",
+        topic: "Risikostrategien",
+        question: "Welche vier Risikostrategien gibt es, und welche Strategie liegt vor, wenn man bewusst nichts unternimmt?",
+        answer: "Vermeiden, vermindern, übertragen und akzeptieren. Bewusst nichts zu unternehmen bedeutet akzeptieren.",
+        related: "Hauptfrage 32"
+      },
+      {
+        photo: "32",
+        topic: "Risiko-Erwartungswert",
+        question: "Ein Risiko hat eine Auswirkung von 5.000 € und eine Eintrittswahrscheinlichkeit von 20 %. Wie hoch ist der Erwartungswert?",
+        answer: "1.000 €: 5.000 € × 0,20.",
+        related: "Hauptfragen 30–32"
+      },
+      {
+        photo: "34–36",
+        topic: "Werkvertrag und EVM",
+        question: "Welche Foto-Varianten stehen hinter Werkvertrag sowie CPI/SPI?",
+        answer: "Werkvertrag: Erfolg/Lieferobjekt und explizite Abnahme. CPI = EV/AC, SPI = EV/PV. Im Foto gilt bei SPI 0,8 und CPI 1,1: zeitlich hinter Plan, Kosten günstiger als geplant.",
+        related: "Hauptfragen 33–35"
+      },
+      {
+        photo: "38",
+        topic: "Regelkreis-Frequenz",
+        question: "Wie häufig wird der Regelkreis typischerweise durchlaufen?",
+        answer: "Im Mittel alle 2–4 Wochen, abhängig von Projektgröße und Komplexität.",
+        related: "Hauptfrage 36"
+      },
+      {
+        photo: "40",
+        topic: "Abnahme",
+        question: "Wer nimmt das Projektlieferobjekt ab?",
+        answer: "Der Projektauftraggeber beziehungsweise der Kunde anhand der dokumentierten Abnahmekriterien.",
+        related: "Hauptfragen 39 und 40"
+      },
+      {
+        photo: "43",
+        topic: "Product Backlog",
+        question: "Was ist das Product Backlog bei Scrum?",
+        answer: "Ein Scrum-Artefakt: die priorisierte Gesamtliste der Anforderungen, User Stories, Verbesserungen und Fehlerbehebungen.",
+        related: "Hauptfrage 43 behandelt stattdessen Scrum-Ereignisse"
+      }
+    ]
   },
   categories: [
     { id: "grundlagen", range: "1–7", title: "Grundlagen", subtitle: "Projektbegriff, Standards, magisches Dreieck" },

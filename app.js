@@ -124,6 +124,7 @@
     clearInterval(timerHandle);
     timerHandle = null;
     if (route === "home") return renderHome();
+    if (route === "photos") return renderPhotoAudit();
     if (route === "catalog") return renderCatalog();
     if (route === "exam") return renderExam();
     if (route === "mistakes") return renderMistakes();
@@ -142,11 +143,12 @@
       <section class="hero-panel">
         <div class="hero-copy">
           <p class="hero-kicker">BCSM 205 · METHODEN DER PROJEKTDURCHFÜHRUNG</p>
-          <h2>46 Fragen. Klar üben. Sicher antworten.</h2>
-          <p>Alle Fragen aus deinem geprüften Katalog – mit direkter Auswertung, Musterlösungen und den passenden Skriptseiten.</p>
+          <h2>46 Fragentypen. Klar üben. Sicher antworten.</h2>
+          <p>Die angekündigten Fragentypen aus der Mitschrift – mit direkter Auswertung, Musterlösungen, Skriptseiten und einem getrennten Abgleich der älteren Klausurfotos.</p>
           <div class="hero-actions">
             <button class="button primary" data-action="start-question" data-id="${next.id}">Mit Frage ${next.id} weiter</button>
             <button class="button secondary" data-route="exam">Prüfungsrunde starten</button>
+            <button class="button secondary" data-route="photos">Foto-Abgleich ansehen</button>
           </div>
         </div>
         <div class="hero-progress">
@@ -177,6 +179,35 @@
       </section>
 
       <div class="info-strip"><span class="info-icon">i</span><div><strong>Offizielle Prüfung: 120 Punkte, bestanden ab 61</strong><p>${escapeHtml(BCSM205_DATA.exam.note)}</p></div></div>
+    `;
+  }
+
+  function renderPhotoAudit() {
+    session = null;
+    interaction = null;
+    const audit = BCSM205_DATA.photoAudit;
+    setHeader("ALTKAUSUR-FOTOS", "Was zeigen die 17 Fotos wirklich?");
+    view.innerHTML = `
+      <section class="audit-intro">
+        <span class="audit-badge">Geprüft am ${escapeHtml(audit.checked)}</span>
+        <h2>Die Fotos und der 46er-Katalog sind zwei verschiedene Quellen.</h2>
+        <p>${escapeHtml(audit.summary)}</p>
+        <div class="audit-facts">
+          <div><strong>46</strong><span>angekündigte Hauptfragentypen</span></div>
+          <div><strong>17</strong><span>überlappende Altklausurfotos</span></div>
+          <div><strong>${audit.variants.length}</strong><span>klar lesbare Zusatzvarianten</span></div>
+        </div>
+      </section>
+      <div class="section-heading"><div><h2>Zusätzlich aus den Fotos lernen</h2><p>Die Fotofragennummer steht links; „Hauptfrage“ verweist auf das passende Thema im Lernkatalog.</p></div></div>
+      <section class="photo-grid">
+        ${audit.variants.map(item => `<article class="photo-card">
+          <div class="photo-card__meta"><span>Foto-Frage ${escapeHtml(item.photo)}</span><small>${escapeHtml(item.related)}</small></div>
+          <h3>${escapeHtml(item.topic)}</h3>
+          <p>${escapeHtml(item.question)}</p>
+          <div class="photo-answer"><strong>Richtige Antwort</strong><span>${escapeHtml(item.answer)}</span></div>
+        </article>`).join("")}
+      </section>
+      <div class="info-strip"><span class="info-icon">!</span><div><strong>Wichtig beim Teilen</strong><p>Die App ist ein fachlich geprüfter Lernkatalog. Sie ist keine wortgetreue Abschrift einer bestätigten zukünftigen Klausur. Handschriftliche Markierungen auf den Fotos wurden nicht als Lösungsschlüssel übernommen.</p></div></div>
     `;
   }
 

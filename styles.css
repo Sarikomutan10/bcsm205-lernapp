@@ -138,6 +138,25 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 .info-strip strong { display: block; margin-bottom: 2px; }
 .info-strip p { margin: 0; color: var(--muted); font-size: 13px; }
 
+.audit-intro { padding: clamp(24px, 4vw, 38px); border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); }
+.audit-badge { display: inline-flex; padding: 5px 10px; border-radius: 999px; color: #fff; background: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .04em; }
+.audit-intro h2 { max-width: 760px; margin: 15px 0 10px; font: 700 clamp(27px, 4vw, 43px)/1.08 Georgia, serif; letter-spacing: -.025em; }
+.audit-intro > p { max-width: 850px; margin: 0; color: var(--muted); }
+.audit-facts { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 24px; }
+.audit-facts div { padding: 15px; border-radius: 15px; background: var(--surface-2); }
+.audit-facts strong, .audit-facts span { display: block; }
+.audit-facts strong { font: 700 28px/1 Georgia, serif; }
+.audit-facts span { margin-top: 6px; color: var(--muted); font-size: 11px; }
+.photo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.photo-card { padding: 20px; border: 1px solid var(--line); border-radius: 19px; background: var(--surface); }
+.photo-card__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--orange); font-size: 11px; font-weight: 800; }
+.photo-card__meta small { color: var(--blue); font-weight: 750; }
+.photo-card h3 { margin: 12px 0 6px; font: 700 21px/1.15 Georgia, serif; }
+.photo-card > p { margin: 0; color: var(--muted); font-size: 13px; }
+.photo-answer { display: grid; gap: 3px; margin-top: 15px; padding: 13px; border-radius: 13px; background: var(--mint); }
+.photo-answer strong { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.photo-answer span { font-size: 13px; }
+
 .session-bar { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; margin-bottom: 18px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(12px); }
 .session-count { font-weight: 800; font-size: 13px; white-space: nowrap; }
 .linear-progress { height: 7px; overflow: hidden; border-radius: 12px; background: var(--surface-2); }
@@ -278,6 +297,8 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
   .progress-ring strong { font-size: 28px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .category-grid, .question-grid, .exam-setup { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .audit-facts { grid-template-columns: 1fr; }
   .question-card { padding: 22px 17px; border-radius: 22px; }
   .pill.source { margin-left: 0; }
   .question-footer { align-items: flex-start; flex-direction: column; }

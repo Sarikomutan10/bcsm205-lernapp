@@ -4,7 +4,8 @@ Interaktive Lernapp für die 46 Klausurfragen im Modul **Methoden der Projektdur
 
 ## Enthalten
 
-- alle 46 Fragen aus dem geprüften Fragenkatalog
+- 46 angekündigte Fragentypen aus der aktuellen Mitschrift
+- separater Abgleich mit 17 überlappenden Fotos einer älteren Klausurvariante
 - anklickbare Single- und Multiple-Choice-Aufgaben
 - interaktive Zuordnungen, Reihenfolge- und Rechenaufgaben
 - Musterlösungen und Skriptseiten zu jeder Frage
@@ -13,3 +14,5 @@ Interaktive Lernapp für die 46 Klausurfragen im Modul **Methoden der Projektdur
 - installierbar und nach dem ersten Laden offline nutzbar
 
 Die App funktioniert als statische Website und kann direkt über GitHub Pages bereitgestellt werden.
+
+Die 46 Hauptfragen sind ein skriptbasierter Lernkatalog und keine wortgetreue Abschrift einer bestätigten zukünftigen Klausur. Abweichende, klar lesbare Fotoaufgaben sind im Bereich **Foto-Abgleich** ausgewiesen.
